@@ -39,6 +39,28 @@ async function fetchProductsAsync() {
         displayProducts(products)
         
     } catch (error) {
-        handleError(error); 
+
+        console.log(`ERROR: ${error}`);
+        
+        // handleError(error); 
     }  
+}
+
+fetchProductsAsync()
+
+// TASK 4: DISPLAY THE PRODUCTS
+function displayProducts(products) {
+    const container = document.querySelector("#product-container")
+
+    products.slice(0,5).forEach(product => {
+        const productDiv = document.createElement('div');
+
+        productDiv.innerHTML = `
+            <h3>${product.fields.name}</h3>
+            <p>$${product.fields.price}</p>
+            <br>
+            <img src="${product.fields.image[0].url}"</img>`;
+
+        container.appendChild(productDiv)
+    })
 }
