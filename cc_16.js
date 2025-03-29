@@ -22,8 +22,6 @@ function fetchProductsThen() {
         })
 }
 
-fetchProductsThen()
-
 // TASK 3: FETCH PRODCUTS WITH async/wait
 async function fetchProductsAsync() {
     try {
@@ -42,8 +40,6 @@ async function fetchProductsAsync() {
         handleError(error); 
     }  
 }
-
-fetchProductsAsync()
 
 // TASK 4: DISPLAY THE PRODUCTS
 function displayProducts(products) {
@@ -65,4 +61,8 @@ function displayProducts(products) {
 // TASK 5: REUSABLE ERROR HANDLER
 function handleError(error) {
     console.log(`An error has occurred: ${error}`);   
-}
+};
+
+// TASK 6: CALL YOUR FETCH FUNCTIONS
+fetchProductsThen();
+fetchProductsAsync();
