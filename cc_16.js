@@ -38,11 +38,8 @@ async function fetchProductsAsync() {
         // Calling helper function
         displayProducts(products)
         
-    } catch (error) {
-
-        console.log(`ERROR: ${error}`);
-        
-        // handleError(error); 
+    } catch (error) {        
+        handleError(error); 
     }  
 }
 
@@ -63,4 +60,9 @@ function displayProducts(products) {
 
         container.appendChild(productDiv)
     })
+}
+
+// TASK 5: REUSABLE ERROR HANDLER
+function handleError(error) {
+    console.log(`An error has occurred: ${error}`);   
 }
