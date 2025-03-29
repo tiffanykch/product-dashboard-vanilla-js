@@ -1,5 +1,4 @@
 // TASK 2: FETCH PRODUCTS WITH .then()
-
 function fetchProductsThen() {
     
     // Send request to product API
@@ -24,3 +23,22 @@ function fetchProductsThen() {
 }
 
 fetchProductsThen()
+
+// TASK 3: FETCH PRODCUTS WITH async/wait
+async function fetchProductsAsync() {
+    try {
+        const response = await fetch('https://www.course-api.com/javascript-store-products')
+
+        if(!response.ok) {
+            throw new Error('Sorry! Network response not ok.')
+        }
+
+        const products = await response.json()
+
+        // Calling helper function
+        displayProducts(products)
+        
+    } catch (error) {
+        handleError(error); 
+    }  
+}
