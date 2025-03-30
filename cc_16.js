@@ -47,6 +47,7 @@ function displayProducts(products) {
 
     products.slice(0,5).forEach(product => {
         const productDiv = document.createElement('div');
+        productDiv.classList.add("product-card")
 
         productDiv.innerHTML = `
             <h3>${product.fields.name}</h3>
